@@ -38,7 +38,7 @@ const switchTab = (id) => {
     document.getElementById("liked").style.display = "none";
     document.getElementById("reported").style.display = "none";
   } else if (id === "liked") {
-    document.getElementById("liked").style.display = "block";
+    document.getElementById('liked').style.display = "block";
     document.getElementById("posts").style.display = "none";
     document.getElementById("reported").style.display = "none";
 
@@ -56,8 +56,6 @@ const createPost = (post) => {
   const { userImage, image } = post
   const user = post.comments[0].user
   const text = post.comments[0].text
-  // const { text} = post?.comments?.text
-  // const { user} = post?.comments?.user
   const div = document.createElement("article");
   div.classList.add("post");
   div.innerHTML = `
@@ -145,6 +143,7 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
+  document.getElementById("liked").innerHTML=''
   likedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("liked").appendChild(div);
