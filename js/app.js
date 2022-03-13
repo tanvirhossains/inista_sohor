@@ -17,13 +17,10 @@ const isLiked = (id) => {
 };
 
 const addToLiked = (id) => {
-  // likedPostsId.plus(id);
-  likedPostsId(id);
-
-  // document.likingPhoto()
-
+  likedPostsId.push(id);
   showPosts(posts);
 };
+
 
 const reportPost = (id) => {
   reportedPostsId.push(id);
